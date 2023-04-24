@@ -55,9 +55,7 @@ Smart contracts:Fundity  can utilize smart contracts, which are self-executing c
 
 
 ## Development
-This project is still under devlopment
-
-
+Due to some incontigencies. The Project is not comepleted(Front-End). But The Solution it addresses is still key.
 
 
 
