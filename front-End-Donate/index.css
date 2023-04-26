@@ -374,3 +374,20 @@ body{
     color:#c5c4c4
 }
 
+#balanceButton {
+    background-color: blue;
+    color: white;
+    font-size: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #balance-text {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(218, 207, 207);
+    margin-top: auto;
+  }
+  

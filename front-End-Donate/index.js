@@ -57,6 +57,14 @@ let account,dashBoardAddress
 let Address, addressName, description, _balance ,sendValue
 const check = dashBoardAddress
 
+const showBalanceBtn = document.querySelector('#balanceButton');
+const balanceText = document.querySelector('#balance-text');
+
+showBalanceBtn.addEventListener('click', () => {
+ balanceText.textContent = balanceButton.value;
+ balanceText.style.display = 'block';
+});
+
 
 
 function listenForTxnMine(txnResponse, provider) {
@@ -95,7 +103,8 @@ async function connect() {
         } catch (error) {
             console.log(error)
         }
-        connectButton.innerHTML = account.substring(0,4) // and this part
+       
+        connectButton.innerHTML = account
     
     } else {
         connectButton.innerHTML = 'Install Metamask !!!!'
@@ -291,8 +300,14 @@ async function getBalance() {
         )
         Address = await contractFactory.getNameToAddress(addressName)
         const balance = await provider.getBalance(Address)
+        const Balance = ethers.utils.formatEther(balance)
         console.log(` Balance : ${ethers.utils.formatEther(balance)} eth`)
+        showBalanceBtn.addEventListener('click', () => {
+            balanceText.textContent = ` ${Balance/10000} ETH`;
+            balanceText.style.display = 'block';
+           });
     }
+   
 }
 
 async function search() {
