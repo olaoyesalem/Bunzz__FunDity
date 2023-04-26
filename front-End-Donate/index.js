@@ -9,20 +9,40 @@ import { ethers } from './ethers-5.6.esm.min.js'
 const connectButton = document.getElementById('connectButton')
 connectButton.onclick = connect
 
-const fundButton = document.getElementById('fundButton')
-fundButton.onclick = fund
+// const //fundButton = document.getElementById('fundButton')
+// fundButton.onclick = fund
 
 const withdrawButton = document.getElementById('withdrawButton')
-withdrawButton.onclick = withdraw
+withdrawButton.onclick = withdrawAddresss   // write another one for withdraw
 
 const balanceButton = document.getElementById('balanceButton')
-balanceButton.onclick = balance
+balanceButton.onclick = getBalance
 
 // const createCampaignButton = document.getElementById('campaignButton')
 // createCampaignButton.onclick = createCampaign
 
 const createCampaignButton = document.getElementById('createCampaignButton')
 createCampaignButton.onclick = createCampaign
+
+const checkSthButton  = document.getElementById('checkButton')
+checkSthButton.onclick = checkSth
+
+const dashBoardButton = document.getElementById('dashBoardButton')
+dashBoardButton.onclick = dashBoard
+
+const dashBoardcampaignButton = document.getElementById(`dashBoardcampaignButton`)
+dashBoardcampaignButton.onclick = campaignName
+const fundButton = document.getElementById(`fundButton`)
+fundButton.onclick = fundAddress
+
+
+
+const descriptionButton = document.getElementById('descriptionButton')
+descriptionButton.onclick = descriptions
+
+// const searchButton = document.getElementById('search-bar')
+// searchButton.onclick = search
+
 
 // const withdrawAddressButton = document.getElementById('withdrawAddressButton')
 // withdrawAddressButton.onclick = withdrawAddresss
@@ -33,7 +53,11 @@ createCampaignButton.onclick = createCampaign
 // const searchButton = document.getElementById('searchButton')
 // searchButton.onclick = search
 
-let account
+let account,dashBoardAddress
+let Address, addressName, description, _balance ,sendValue
+const check = dashBoardAddress
+
+
 
 function listenForTxnMine(txnResponse, provider) {
     // this is to listen to the blockchain and see events that has happened
@@ -50,7 +74,16 @@ function listenForTxnMine(txnResponse, provider) {
     })
 }
 
+async function checkSth(){
+    console.log(`I'm Working`)
+    console.log(Address)
+    console.log(dashBoardAddress)
+    console.log(check)
+    window.alert(["check"])
+}
+
 async function connect() {
+    
     if (typeof window.ethereum !== 'undefined') {
         try {
            account =  await window.ethereum.request({ method: 'eth_requestAccounts' }) //changed This part
@@ -61,34 +94,11 @@ async function connect() {
     
     } else {
         connectButton.innerHTML = 'Install Metamask !!!!'
+        window.alert(["Install Metamask"])
     }
 }
 
-async function fund() {
-    const ethAmount = document.getElementById('ethAmount').value
-    console.log(` Funding with ${ethAmount} eth  `)
-    console.log(`----------------------------------------`)
-    if (typeof window.ethereum !== 'undefined') {
-        const provider = new ethers.providers.Web3Provider(window.ethereum)
-        const signer = provider.getSigner()
-        const contract = new ethers.Contract(
-            donateFactoryAddress,
-            donateFactoryABI,
-            signer
-        )
-        try {
-            const txnResponse = await contract.Fund({
-                value: ethers.utils.parseEther(ethAmount),
-            })
-            await listenForTxnMine(txnResponse, provider)
-            console.log(
-                `Successfully Transferred ${ethAmount} eth from ${signer.address} to ${donateFactoryAddress}`
-            )
-        } catch (error) {
-            console.log(error)
-        }
-    }
-}
+
 
 async function withdraw() {
     let value  = document.getElementById('ethAmount').value
@@ -114,22 +124,44 @@ async function withdraw() {
     }
 }
 
+async function dashBoard(){
+ 
+    dashBoardButton.innerHTML = ` ${dashBoardAddress}`
+}
+
+async function campaignName(){
+    dashBoardcampaignButton.innerHTML = `${addressName}`
+}
+
+async function Balance(){
+    balButton.innerHTML = `${_balance}`
+}
+
+async function descriptions(){
+    descriptionButton.innerHTML = `${description}`
+}
+
 async function balance() {
     if (typeof window.ethereum !== 'undefined') {
         const provider = new ethers.providers.Web3Provider(window.ethereum)
         const signer = provider.getSigner()
-        const balance = await provider.getBalance(donateFactoryAddress)
+         const balance = await provider.getBalance(donateFactoryAddress)
         console.log(` Balance : ${ethers.utils.formatEther(balance)} eth`)
+        _balance = ethers.utils.formatEther(balance)
+
     }
 }
 
 async function createCampaign() {
     // Once this has been created it should go to a new page(index.html in createCampaign folder) and give the right details
-    let Address, addressName, description
-    const sendValue = ethers.utils.parseEther('0.01')// changed this to 0.01
-    addressName = document.getElementById('addressName').value
-    description = document.getElementById('description').value
-    if (typeof window.ethereum !== 'undefined') {
+   
+     sendValue = ethers.utils.parseEther('0.01')// changed this to 0.01
+    addressName = document.getElementById('addressNameInput').value
+   
+   
+    description = document.getElementById('descriptionInput').value
+   
+    if (typeof window.ethereum !== 'undefined') { 
         const provider = new ethers.providers.Web3Provider(window.ethereum)
         const signer = provider.getSigner()
         const contract = new ethers.Contract(
@@ -137,15 +169,26 @@ async function createCampaign() {
             donateFactoryABI,
             signer
         )
-        const txnResponse = await contract.createDonate(
-            addressName,
-            description,
-            { value: sendValue }
-        )
-        await txnResponse.wait(1)
-        Address = await contract.getNameToAddress(addressName)
-        console.log(` Suceesfully Created A campaign at ${Address}`)
+        try {
+            window.alert(["User has to pay 0.01 eth"])   
+            const txnResponse = await contract.createDonate(
+                addressName,
+                description,
+                { value: sendValue }
+            )
+            await txnResponse.wait(1)
+            Address = await contract.getNameToAddress(addressName)
+            console.log(` Sucessfully Created A campaign at ${Address}`)
+            window.alert([` Sucessfully Created A campaign at ${Address}`])
+            dashBoardAddress=Address
+        } catch (error) {
+         window.alert(["CAMPAIGN NAME HAS BEEN TAKEN"])   
+        }
+        
+
     }
+    
+        
 }
 
 async function fundAddress() {
@@ -181,11 +224,13 @@ async function fundAddress() {
                 value: ethers.utils.parseEther(ethAmount),
             })
             await listenForTxnMine(txnResponse, provider)
+            window.alert([`Successfully Transferred ${ethAmount}  to ${Address}`])
             console.log(
                 `Successfully Transferred ${ethAmount} eth from ${signer} to ${Address}`
             )
         } catch (error) {
             console.log(error)
+            window.alert(["INSERT VALID VALUE OF ETH"])
         }
     }
 }
@@ -213,11 +258,19 @@ async function withdrawAddresss() {
         const contract = new ethers.Contract(Address, donateABI, signer)
         console.log(Address)
 
-        const txnResponse = await contract.withdraw(ethers.utils.parseEther(withdrawValue))
-        await listenForTxnMine(txnResponse, provider)
-        console.log(`-------------------------------------`)
-        console.log(`Withdrawn........`)
+        try {
+            const txnResponse = await contract.withdraw(ethers.utils.parseEther(withdrawValue))
+            await listenForTxnMine(txnResponse, provider)
+            console.log(`-------------------------------------`)
+            console.log(`Withdrawn........`)
+        } catch (error) {
+            console.log(error)
+            window.alert([`ONLY CAMAPIGN CREATOR CAN WITHDRAW AND VALID VALUE MUST BE INPUTED`])
+        }
+
+       
     }
+   
 }
 
 async function getBalance() {
@@ -239,7 +292,7 @@ async function getBalance() {
 
 async function search() {
     let creatorDetail
-    const input = document.getElementById('search').value
+    const input = document.getElementById('search-bar').value
 
     if (typeof window.ethereum !== 'undefined') {
         const provider = new ethers.providers.Web3Provider(window.ethereum)

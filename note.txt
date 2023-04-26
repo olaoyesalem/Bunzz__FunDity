@@ -20,3 +20,16 @@ make it working
 
 It is fucking workinmh
 with seoplia evrything
+
+
+So, I ahve giotten the dashbvoard shit and it is working balance and address
+b
+
+
+
+after refrshibg oonce cannot see the addressname etc again
+show the balance in a sweeter way
+
+put create campaign under secription and colot ir
+
+// look at other people's source code and add the address to make sense(Connected)

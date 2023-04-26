@@ -7,112 +7,79 @@
     <title>FunDity</title>
     <link rel="stylesheet" href="index.css">
     
-    <script src="https://kit.fontawesome.com/5ea37cccba.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/5ea37cccba.js" crossorigin="anonymous"></script> -->
     <script src="./index.js" type="module"></script>
-    <script>
-        
-        function create(){
-            document.querySelector('#create').style.display='none'
-            document.querySelector("#create").innerHTML=document.querySelector('#create-form').innerHTML
-            document.querySelector('#create-form').style.display ='block'
-        }
-        function createCampaign(){
-            
-            document.getElementById('dashBoard').style.display='flex';
-            document.querySelector("#main").style.height = '450px'
-            document.querySelector('.container').style.display='none'
-            document.querySelector('#create-form').style.display='none'
-            document.querySelector('#create').style.display='none'
-            document.getElementById('dashBoard2').style.display='none'
-            document.querySelector("#create").innerHTML=document.getElementById('dashBoard').innerHTML
-       
-            
-        }
-        function withdrawF(){
-            document.getElementById('dashBoard2').style.display='flex';
-            document.querySelector("#main").style.height = '450px'
-            document.querySelector('.container').style.display='none'
-            document.querySelector('#create-form').style.display='none'
-            document.querySelector('#create').style.display='none'
-            document.getElementById('dashBoard').style.display='none'
-            document.querySelector("#create").innerHTML=document.getElementById('dashBoard2').innerHTML
-           
-            
-        }
-        
-    </script>
+ 
+
+  
+   
 </head>
 <body>
     <div id="header">
         <div class="logo">
-            <span style="color:#6db76d; font-size:40px;"><</span>
-            <span style="color:#c5804c; font-size:40px;">></span>FunDity
+            <span style="color:#6db76d; font-size:40px;"></span>
+            <span style="color:#c5804c; font-size:40px;"><></span>FunDity
         </div>
         <div id="nav">
             <button id="balanceButton">Balance</button>
             <button id="withdrawButton">Withdraw</button>
             <button id="fundButton">Fund</button>
-            <label for="fund">ethAmount</label>
+            <label style="margin: auto; " for="fund">ethAmount</label>
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input id="ethAmount" placeholder="0.1 eth" />
+            <input style="color:#222221" id="ethAmount" placeholder="0.1 eth" /> <br>
+
+            <div>
+                <!-- <i class="fa-solid fa-magnifying-glass"></i>
+                <input placeholder="Search for Campaign" type="text" id="search-bar"> -->
+            </div>
         </div>
       
       <!--  TEST-->
         <div id="nav-right">
-            <div>
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input placeholder="Search for Campaign" type="text" id="search-bar">
-            </div>
+            
             <div>
                 <!-- This is the connect button, but I just want to check if the Fund button is working -->
             
             </div>
             <div>
                 <!-- This is the connect button -->
-                <button id="connectButton">connect</button>
-                >
+                <h3 style="color:#ada5a5">CAMPAIGN</h3>
+                <button style="align-self: last baseline;" id="connectButton">Connect</button>
+                <!-- Wanna check if it's working -->
+                <button id="checkButton">check sth</button>
             </div>
 
-            <div>
-               
-                <!-- I just want to check if the Create Campaign button is working -->
-                <button id="campaignButton">createCampaign </button>
-                >
-            </div>
-
-
-<!-- TEST END-->
+        
         </div>
     </div>
     <div id="body">
         <div id="side-nav">
             <h3 style="color:#ada5a5">CAMPAIGN</h3>
-            <button>Dashboard</button>
-            <button>Overview</button>
-            <button>History</button>
-            <button>Trending</button>
+            <button id = "dashBoardButton" > Address </button>
+            <button id = "dashBoardcampaignButton">Campaign Name</button>
+            <button id="descriptionButton">Description</button>
+           
         </div>
         <div id="main">
             
             <div id="create">
                 <h1 class="gradient-text">Create a Campaign <br> with just one Click</h1>
-                <button id="createCampaignButton" onclick="create()">Create Campaign</button>
+                
             </div>
-            <div id="create-form" style="">
+            <div id="create-form">
+
+
+    
 
                 <button id="addressName">Campaign Name</button><br>
-                <input ><br><br>
+                <input id="addressNameInput"><br><br>
                 <button id="description">Description</button><br>
-                <input placeholder="0x....."><br><br>
-                <button id="createCampaignButton">createCampaign </button>
-        
+                <input  id =descriptionInput placeholder="0x....."><br><br>
+                <button style=" width:400px; height:40px; color:#fcf9f9;;background: color #222221;;" id="createCampaignButton" onclick="create()">Create Campaign</button>
+                
                
-                <!-- <label for="createCampaign">Campaign Name</label>
-                <input id="addressName" placeholder=" e.g. John Limited "/>
-                <label for="createCampaign">Description</label><br><br>
-                <input id="description" placeholder=" e.g. John Limited "/>
-                <button onclick="createCampaign()">CreateCheck</button> -->
             </div>
+           
            
             <div id="dashBoard" style="display:none">
                 <div id="head">
@@ -127,7 +94,7 @@
                     <input placeholder="default"><br><br>
                     <button>Fund Amount(Eth)</button>
                     <input><br><br>
-                    <button style=" width:410px; height:40px; background-color:#c5804c;">Fund</button>
+                    <button id= "fundButton"style=" width:410px; height:400px; background: color #c5804c;;">Fund</button>
                     
 
                 </div>
@@ -135,7 +102,7 @@
 
 
             </div>
-            <div id="dashBoard2" style="display:none">
+            <div id="dashBoard2"  style="display:none">
                 <div id="head2">
                     <h1>Dashboard</h1>
                 </div>
