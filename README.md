@@ -15,8 +15,8 @@ FunDity is designed to simplify the process of creating and managing crowdfundin
 
 ## Members Role
 
-- Olaoye Salem Iyanuloluwa : Responsible for creating smart contracts,deploying,writing tests for the smart contract ,and co- writing the script connecting Front-End and smart contract  using web3.js
-- Benjamin Easter: Responsible Writing the front-end and co-writing the script connecting Front-End and smart contract  using web3.js
+- **Olaoye Salem Iyanuloluwa** : Responsible for creating smart contracts,deploying,writing tests for the smart contract ,and co- writing the script connecting Front-End and smart contract  using web3.js and also wrote part of the fron-end.
+- **Benjamin Easter**: Responsible Writing the front-end and co-writing the script connecting Front-End and smart contract  using web3.js
 
 ## Problem
 Currently,The lack of transparency in traditional fundraising methods can make it difficult for donors and backers to track the flow of funds and ensure they are being used appropriately. This can create challenges in establishing trust between fundraisers and donors.Also, traditional fundraising methods may not be accessible to everyone due to their stringent requirements, which can exclude individuals and organizations that could benefit from fundraising.Lastly,traditional fundraising methods may come with high fees and transaction costs, which can eat into the funds raised and make it more difficult to meet fundraising goals.
