@@ -74,7 +74,7 @@ Smart contracts:Fundity  can utilize smart contracts, which are self-executing c
 
 
 ## Development
-Due to some incontigencies. The Project is not comepleted(Front-End). But The Solution it addresses is still key.
+In summary, while the project's front-end may not be completed due to some unforeseen circumstances, the solution provided by the project is still highly significant and relevant. It is vital to address the solution in a more comprehensive and professional manner to ensure that its potential impact is properly acknowledged and utilized.
 
 
 
