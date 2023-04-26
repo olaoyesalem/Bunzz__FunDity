@@ -25,7 +25,12 @@ Currently,The lack of transparency in traditional fundraising methods can make i
 FunDity allows users to create campaign easily and seamlessly making crowdunding for business , organizations, individuals easier,transparent,secure and exposed to a global community.It is aimedand  designed to simplify the process of creating and managing crowdfunding campaigns on the blockchain
 
 ## How It Works
-A user creates a campaign and donates 0.01 eth to FunDity. After then a campaign address is produced by Fundity. The Address can be funded through the funding app or through any wallet e.g. metamask. And only the creator of the address can withdraw.
+A user creates a campaign and donates 0.01 eth to FunDity. 
+![fundity_3](https://user-images.githubusercontent.com/89555234/234476177-738e8f8d-83d1-4e79-bf2b-740b6f0b3c30.PNG)
+![fundity_2](https://user-images.githubusercontent.com/89555234/234476165-17817265-6e78-4e0d-87ef-e1fb556e015f.PNG)
+
+
+After then a campaign address is produced by Fundity. The Address can be funded through the funding app or through any wallet e.g. metamask. And only the creator of the address can withdraw.
 
 
 
