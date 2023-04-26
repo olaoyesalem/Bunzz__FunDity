@@ -3,7 +3,7 @@ import {
     donateAddress,
     donateFactoryABI,
     donateABI,
-} from '../front-End-Donate/constant.js'
+} from './constant.js'
 import { ethers } from './ethers-5.6.esm.min.js'
 
 const connectButton = document.getElementById('connectButton')
