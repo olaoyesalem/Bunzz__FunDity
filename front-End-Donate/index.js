@@ -86,7 +86,12 @@ async function connect() {
     
     if (typeof window.ethereum !== 'undefined') {
         try {
-           account =  await window.ethereum.request({ method: 'eth_requestAccounts' }) //changed This part
+           account =  await window.ethereum.request({ method: 'eth_requestAccounts' })
+            //changed This part
+           window.ethereum.request({
+            method: 'wallet_switchEthereumChain',
+            params: [{ chainId: '0x5' }]
+          }).then(() => console.log('Switched to Goerli network!'));
         } catch (error) {
             console.log(error)
         }
