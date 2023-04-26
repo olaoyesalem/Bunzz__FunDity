@@ -24,8 +24,8 @@ balanceButton.onclick = getBalance
 const createCampaignButton = document.getElementById('createCampaignButton')
 createCampaignButton.onclick = createCampaign
 
-const checkSthButton  = document.getElementById('checkButton')
-checkSthButton.onclick = checkSth
+// const checkSthButton  = document.getElementById('checkButton')
+// checkSthButton.onclick = checkSth
 
 const dashBoardButton = document.getElementById('dashBoardButton')
 dashBoardButton.onclick = dashBoard
