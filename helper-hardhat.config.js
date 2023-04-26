@@ -1,5 +1,6 @@
 // This is to store the address that gives the priceFeed for each Blockchain
 const {getNamedAccounts} = require("hardhat")
+
 const networkConfig ={
     5:{
         ethUsdPriceFeed: "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e",
