@@ -24,6 +24,10 @@ Currently,The lack of transparency in traditional fundraising methods can make i
 ## Proposed-Solution
 FunDity allows users to create campaign easily and seamlessly making crowdunding for business , organizations, individuals easier,transparent,secure and exposed to a global community.It is aimedand  designed to simplify the process of creating and managing crowdfunding campaigns on the blockchain
 
+## How It Works
+A user creates a campaign and donates 0.01 eth to FunDity. After then a campaign address is produced by Fundity. The Address can be funded through the funding app or through any wallet e.g. metamask. And only the creator of the address can withdraw.
+
+
 
 ## Market
 Transaction value in the Crowdfunding segment is projected to reach US$1.14bn in 2023. 
@@ -50,9 +54,8 @@ Smart contracts:Fundity  can utilize smart contracts, which are self-executing c
 * hardhat
 
 
-
-
-
+## Development
+Due to some incontigencies. The Project is not comepleted(Front-End). But The Solution it addresses is still key.
 
 
 
