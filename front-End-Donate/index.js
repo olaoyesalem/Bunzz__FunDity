@@ -95,7 +95,7 @@ async function connect() {
         } catch (error) {
             console.log(error)
         }
-        connectButton.innerHTML = account // and this part
+        connectButton.innerHTML = account.substring(0,4) // and this part
     
     } else {
         connectButton.innerHTML = 'Install Metamask !!!!'
