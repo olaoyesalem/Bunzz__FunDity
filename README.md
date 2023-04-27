@@ -1,7 +1,7 @@
 # FunDity✔✔🎗💰
 
 
-## FUNDITY - A CROWDFUNDING CAMPAIGN CREATOR DECENTRALIZED APPLICATION
+## FunDity -A deccentralized platform for easy,seamless campaign creation.
 ### A BUNNZ X WEB3AFRIKA HACKHATHON PROJECT 
 
 FunDity is designed to simplify the process of creating and managing crowdfunding campaigns on the blockchain. It automatically generates a unique Ethereum address associated with each campaign, provides a dashboard for tracking campaign progress, and includes features like a built-in wallet and social sharing capabilities to make the process more user-friendly. Overall, this dApp provides a convenient and streamlined way for individuals and organizations to create and manage crowdfunding campaigns,funds on the blockchain.
@@ -15,7 +15,7 @@ FunDity is designed to simplify the process of creating and managing crowdfundin
 
 ## Members Role
 
-- **Olaoye Salem Iyanuloluwa** : Responsible for creating smart contracts,deploying,writing tests for the smart contract ,and co- writing the script connecting Front-End and smart contract  using web3.js and also wrote part of the fron-end.
+- **Olaoye Salem Iyanuloluwa** : Responsible for writing and deploying smart contract;writing tests for the smart contract ,and co- writing the script connecting Front-End and smart contract using web3.js,ethers.js,hardhat.
 - **Benjamin Easter**: Responsible Writing the front-end and co-writing the script connecting Front-End and smart contract  using web3.js
 
 ## Problem
@@ -32,18 +32,19 @@ FunDity allows users to create campaign easily and seamlessly making crowdunding
 ![fundity_2](https://user-images.githubusercontent.com/89555234/234476165-17817265-6e78-4e0d-87ef-e1fb556e015f.PNG)
 
 
-**After then a campaign address is produced by Fundity. The Address, Camapign Name and Description is popluated at the left hand side.**
+**A unique campaign address is populated.**
 
 
 ![fundity_4](https://user-images.githubusercontent.com/89555234/234479079-d76ddab2-b88d-4a4f-a2d2-01cce07ed305.PNG)
 ![fundity_5](https://user-images.githubusercontent.com/89555234/234479250-7c046d11-97c0-4924-a4da-948e3b3eae4a.PNG)
 
-**The Address can be funded through the funding app or through any wallet e.g. metamask. And only the creator of the address can withdraw.**
+**The Address can be funded through FunDity or any wallet e.g. metamask.**
+**Only the creator of the address(campaign) can withdraw.**
 
 
 ![fundity_6](https://user-images.githubusercontent.com/89555234/234479405-97b0df3c-b735-4fda-a8b3-802421f15069.PNG)
 
-**And If Anyone aprt from the creator of the campaign tries to withdraw. The transaction is reverted.**
+**And if anyone apart from the creator tries to withdraw. The transaction is reverted.**
 
 ![fundity_7](https://user-images.githubusercontent.com/89555234/234479524-9255309b-55f3-412d-8078-510ab3eef798.PNG)
 
