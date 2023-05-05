@@ -2,7 +2,6 @@
 pragma solidity ^0.8.7;
 
 
-
 // Add price converter to make the minimum paymentt $1
 error DonateFactory__NameHasBeenTaken();
 error DonateFactory__NotOwner();
